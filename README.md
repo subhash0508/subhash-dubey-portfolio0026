@@ -1,16 +1,125 @@
-# Subhash Dubey — GitHub Portfolio
+# Subhash Dubey — Portfolio (2026 redesign)
 
-Final user-reference version.
+Live: https://subhash0508.github.io/subhash-dubey-portfolio0026/
 
-## Included
-- Dark orange navigation with filled active menu item
-- Responsive mobile menu
-- User portrait kept proportional (no stretching)
-- Software icons on the left and AI tools on the right
-- Click-to-zoom icon interaction without moving/overlapping cards
-- 5.7+ years experience badge
-- AI workflow, software, AI tools, experience, skills, resume and contact sections
-- Resume PDF in `assets/Subhash-Dubey-Resume.pdf`
+> The site is designed to work by opening `index.html` directly. If your browser blocks local JavaScript, use GitHub Pages or a simple local server; the visible layout still has fallbacks.
+
+Static GitHub Pages portfolio for **Subhash Dubey — Senior Motion Graphics Designer | Video Editor | Graphic Designer | AI Creative Expert**.
+
+## Files
+
+- `index.html` — website structure
+- `style.css` — premium responsive visual design
+- `main.js` — interactions, filters, project viewer, lazy video previews
+- `config.js` — contact, Behance, LinkedIn, resume and showreel settings
+- `projects.js` — **the only portfolio data file you need to edit**
+- `assets/images/` — project thumbnails/gallery images
+- `assets/videos/` — project videos
+- `assets/Subhash-Dubey-Resume.pdf` — add your real PDF here
+
+## Add your work
+
+Open `projects.js`. There are exactly 20 project slots. Each slot supports:
+
+- thumbnail
+- main video
+- multiple gallery images
+- multiple additional videos
+- category
+- year
+- role
+- tools
+- description
+- creative approach
+
+The approved project data uses only the confirmed toolset in the supplied file.
+
+Example media paths:
+
+`assets/images/project-01.webp`
+
+`assets/videos/project-01.mp4`
+
+If a media file does not exist, the website falls back gracefully.
+
+## Add your showreel
+
+Open `config.js` and change:
+
+```js
+showreel: "assets/videos/showreel.mp4",
+showreelPoster: "assets/images/showreel-poster.webp"
+```
+
+## Add your resume
+
+Put your real PDF at:
+
+`assets/Subhash-Dubey-Resume.pdf`
+
+The Resume button will then open/download that file.
+
+## Add contact links
+
+Edit `config.js`:
+
+```js
+email: "your-real-email@example.com",
+linkedin: "https://www.linkedin.com/in/your-profile/"
+```
+
+Behance is already set to the supplied profile.
 
 ## GitHub Pages
-Upload the contents of this folder to the repository root and enable GitHub Pages from Settings → Pages.
+
+1. Create a repository named `YOUR-USERNAME.github.io` (replace YOUR-USERNAME with your GitHub username).
+2. Upload the contents of this folder to the repository root.
+3. Go to **Settings → Pages**.
+4. Under Build and deployment choose **Deploy from a branch**.
+5. Choose `main` and `/ (root)`.
+6. Save.
+7. Wait for GitHub Pages to publish.
+
+## Important for many videos
+
+Do not put dozens of large raw videos into the initial page load. The code uses poster images, lazy preview loading and viewport pausing. For a large portfolio, keep video files compressed and consider a video/CDN host later. The project data can still point to hosted MP4 URLs if needed.
+
+## Design
+
+- Poppins
+- dark cinematic UI
+- warm orange accent
+- responsive desktop/mobile
+- project filters
+- fullscreen project viewer
+- keyboard navigation
+- reduced-motion support
+- accessible project cards
+
+
+## Resume integration
+The portfolio now includes the supplied Subhash Dubey resume PDF at:
+`assets/Subhash-Dubey-Resume.pdf`
+
+The website Resume and Contact sections were populated from the supplied resume, including education, experience, skills, software, languages and contact/portfolio details. The source resume is one page and contains the career information shown in the site.
+
+
+## 2026 redesign — kaise update karein
+
+- Sirf asli projects dikhte hain: `projects.js` me jis project ka `title` `[` se shuru hota hai (placeholder), wo website par **hide** rehta hai. Title, thumbnail aur video bhar do — card apne aap dikhne lagega.
+- Pehla project hamesha full-width "featured" card banta hai.
+- Showreel section tabhi dikhta hai jab `config.js` me `showreel` set ho.
+- Images **.webp** (1600px chaudi, ~200 KB) aur videos **720p H.264 MP4** (5 MB se kam) rakho — site fast chalegi.
+
+### Zaroori files (naming)
+
+| File | Kahan | Size |
+|---|---|---|
+| `project-02.webp` … `project-20.webp` | `assets/images/` | 1600×1000 (16:10), webp |
+| `project-02.mp4` … | `assets/videos/` | 720p, <5 MB, 5–20 sec loop |
+| `showreel.mp4` + `showreel-poster.webp` | `assets/videos/`, `assets/images/` | 1080p, 60–90 sec |
+
+### Is version me
+- Recognition (Prashasti award) — `assets/awards/`
+- Software ratings + AI toolkit icons — `assets/icons/`
+- Showreel button YouTube channel par jaata hai (`config.js` → `showreel`)
